@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --pri:#2a8864;
+  --sec:#f5baa0;
+  --ter:#DDDDDD;
+  --quar:#1c1c1c;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--pri);
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+main .menu {
+  flex-wrap: wrap;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+main .menu .card {
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  color: var(--quar);
+  width: 200px;
+  height: 200px;
+  background-color: var(--ter);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin: 20px;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+main .menu .card span {
+  z-index: 1;
+  font-weight: 600;
+  width: 100%;
+  color: var(--pri);
+  text-align: center;
+  padding: 10px 5px;
+  background-color: var(--ter);
+}
+main .menu .card img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .menu .card .hov {
+  z-index: 1;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  bottom: -10%;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--pri);
+  background-color: var(--sec);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 0 10px 10px;
+  transition: all 0.2s ease-in-out;
+}
+main .menu .card::after {
+  opacity: 0.5;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--pri);
+  border-radius: 10px;
+  z-index: -1;
+  transition: all 0.1s ease-in-out;
+}
+main .menu .card:hover {
+  transform: scale(0.99);
+}
+main .menu .card:hover .hov {
+  opacity: 1;
+  bottom: 0;
+}
+main .menu .card:active {
+  transform: scale(0.95);
+}
+main .pages {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+main .pages .page {
+  z-index: 10;
+  padding: 20px;
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  display: none;
+  top: 0;
+  position: absolute;
+  background-color: var(--sec);
+  position: absolute;
+}
+main .pages .page h1 {
+  color: var(--pri);
+}
+main .pages .page i {
+  cursor: pointer;
+  font-size: 1.6rem;
+  color: var(--pri);
+  top: 10px;
+  right: 20px;
+  position: absolute;
+}/*# sourceMappingURL=style.css.map */
