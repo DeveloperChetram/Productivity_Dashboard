@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -5,19 +6,20 @@
 }
 
 :root {
-  --pri:#2a8864;
-  --sec:#f5baa0;
-  --ter:#DDDDDD;
-  --quar:#1c1c1c;
+  --pri: #2a8864;
+  --sec: #f5baa0;
+  --ter: #fcfcfc;
+  --quar: #1c1c1c;
 }
 
-body, html {
+body,
+html {
   height: 100%;
   width: 100%;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Caveat", cursive, sans-serif;
   background-color: var(--pri);
 }
 
@@ -50,11 +52,14 @@ main .menu .card {
 }
 main .menu .card span {
   z-index: 1;
-  font-weight: 600;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
   width: 100%;
+  align-items: center;
+  height: 40px;
   color: var(--pri);
   text-align: center;
-  padding: 10px 5px;
   background-color: var(--ter);
 }
 main .menu .card img {
@@ -73,6 +78,7 @@ main .menu .card .hov {
   bottom: -10%;
   text-align: center;
   font-size: 0.8rem;
+  font-weight: 900;
   color: var(--pri);
   background-color: var(--sec);
   display: flex;
@@ -106,6 +112,8 @@ main .pages {
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 main .pages .page {
   z-index: 10;
@@ -121,7 +129,9 @@ main .pages .page {
   position: absolute;
 }
 main .pages .page h1 {
+  margin-left: 30px;
   color: var(--pri);
+  font-size: 2rem;
 }
 main .pages .page i {
   cursor: pointer;
@@ -130,4 +140,38 @@ main .pages .page i {
   top: 10px;
   right: 20px;
   position: absolute;
+}
+main .pages .todo-page {
+  display: block;
+  height: 100%;
+}
+main .pages .todo-page .todo-container {
+  justify-self: center;
+  width: 95%;
+  display: flex;
+  height: 80%;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+main .pages .todo-page .todo-container .add-task {
+  border-radius: 15px 0px 0px 15px;
+  width: 28%;
+  height: 100%;
+  background-color: var(--pri);
+}
+main .pages .todo-page .todo-container .add-task form {
+  height: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+main .pages .todo-page .todo-container .add-task form h2 {
+  color: var(--ter);
+}
+main .pages .todo-page .todo-container .tasks {
+  border-radius: 0 15px 15px 0;
+  width: 70%;
+  height: 100%;
+  background-color: var(--pri);
 }/*# sourceMappingURL=style.css.map */

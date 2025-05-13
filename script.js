@@ -1,4 +1,4 @@
-const openFeatures= (()=>{
+const openFeatures=(()=>{
     let cards = document.querySelectorAll('.card');
 let span = document.querySelector('.card span');
 let pages = document.querySelectorAll('.page');
@@ -21,5 +21,4 @@ cross.forEach((element, index)=>{
    
 
 })()
-
 
