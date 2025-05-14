@@ -22,3 +22,15 @@ cross.forEach((element, index)=>{
 
 })()
 
+let taskInput = document.querySelector('.add-task form input');
+let taskDescription = document.querySelector('.add-task form textarea');
+let addTaskBtn = document.querySelector('.add-task-btn');
+let important = document.querySelector('#important');
+
+addTaskBtn.addEventListener('click',()=>{
+    console.log(taskInput.value)
+})
+
+important.addEventListener('click',()=>{
+    console.log(important.checked)
+})
