@@ -182,6 +182,16 @@ main .pages .todo-page .todo-container .add-task form textarea {
   height: 40%;
   resize: vertical;
 }
+main .pages .todo-page .todo-container .add-task form .alert {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #ff6b6b;
+  color: var(--ter);
+  font-weight: 600;
+  opacity: 0;
+}
 main .pages .todo-page .todo-container .add-task form .add-task-btn {
   font-size: 1rem;
   font-weight: 600;
@@ -222,6 +232,7 @@ main .pages .todo-page .todo-container .tasks {
   background-color: var(--pri);
 }
 main .pages .todo-page .todo-container .tasks .task {
+  position: relative;
   gap: 10px;
   align-items: center;
   border-radius: 5px;
@@ -230,6 +241,31 @@ main .pages .todo-page .todo-container .tasks .task {
   background-color: var(--ter);
   display: flex;
   justify-content: space-between;
+}
+main .pages .todo-page .todo-container .tasks .task i {
+  font-size: 1rem;
+  position: absolute;
+  width: -moz-fit-content;
+  width: fit-content;
+  top: -3px;
+  left: -2px;
+  color: rgb(240, 38, 38);
+  display: inline-block;
+  animation: rotate 8s linear infinite;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+main .pages .todo-page .todo-container .tasks .task i.true {
+  opacity: 1;
+}
+main .pages .todo-page .todo-container .tasks .task i.false {
+  opacity: 0;
 }
 main .pages .todo-page .todo-container .tasks .task .complete-btn {
   font-size: 1rem;

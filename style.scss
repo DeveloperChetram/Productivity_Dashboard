@@ -207,7 +207,28 @@ main {
                             height:40%;
                             resize: vertical;
                         }
-                        .add-task-btn{
+                        .alert{
+                            width: 100%;
+                            padding: 10px;
+                            border-radius: 5px;
+                            text-align: center;
+                            background-color: #ff6b6b;
+                            color: var(--ter);
+                            font-weight: 600;
+                            // display: none;
+                            opacity: 0;
+                            // animation: shake 1s ease-in-out infinite;
+
+                            // @keyframes shake {
+                              
+                            //     0% { opacity:.5; }
+                            //     50% { opacity:1; }
+                            //     100% { opacity:.5; }
+                            // }
+
+                          
+                        }
+                        .add-task-btn {
                              font-size: 1rem;
                             font-weight: 600;
                             width: 100%;
@@ -252,6 +273,7 @@ main {
                     height: 100%;
                     background-color:var(--pri);
                     .task{
+                        position: relative;
                         gap: 10px;
                         align-items: center;
                         border-radius: 5px;
@@ -260,6 +282,36 @@ main {
                         background-color: var(--ter);
                         display: flex;
                         justify-content: space-between;
+                        i{ 
+                            //  border: 2px solid white;
+                            font-size: 1rem;
+                            position: absolute;
+                            width: fit-content;
+                            top: -3px;
+                            left: -2px;
+                            color: rgb(240, 38, 38);
+                            display: inline-block;
+                            animation: rotate 8s linear infinite;
+
+                        @keyframes rotate {
+                            0% {
+                                transform: rotate(0deg);
+                            }
+                            100% {
+                                transform: rotate(360deg);
+                            }
+                        }
+
+
+                            &.true{
+
+                                opacity: 1;
+                            }
+                            &.false{
+                                opacity: 0;
+                            }
+                        }
+                     
                         .complete-btn{
                             font-size: 1rem;
                             font-weight: 500;

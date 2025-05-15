@@ -57,7 +57,7 @@
                 <i class="fa-solid fa-rectangle-xmark"></i>
                 <div class="todo-container">
                     <div class="add-task">
-                        <form onsubmit="event.preventDefault()">
+                        <form >
                             <h2> Add Task</h2>
                             <input type="text" placeholder="Enter your task">
                             <textarea name="" id="" placeholder="Enter Description"></textarea>
@@ -65,18 +65,23 @@
                             <input type="checkbox" id="important" name="important">
                             <label for="important">Mark As Important</label>
                             </div>
-                            <button class="add-task-btn" >Add</button>
+                            <div class="alert">
+                                Please enter something
+                            </div>
+                           <div class="buttons"> <button class="add-task-btn" >Add</button>
+                           </div>
+                           <!-- <button class="clear-all-task-btn" >Add</button> -->
                         </form>
                     </div>
                     <div class="tasks">
                         
-                        <div class="task">
+                        <!-- <div class="task">
                             <div class="text-content">
                                 <h2>Task Heading</h2>
                                 <p>task Desciption : Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti ipsam ad blanditiis expedita iusto obcaecati.</p>
                             </div>
                             <button class="complete-btn">Mark as Done</button>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </section>
