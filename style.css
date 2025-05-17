@@ -141,7 +141,6 @@ main .pages .page i {
   position: absolute;
 }
 main .pages .todo-page {
-  display: block;
   height: 100%;
 }
 main .pages .todo-page .todo-container {
@@ -284,4 +283,43 @@ main .pages .todo-page .todo-container .tasks .task .complete-btn:active {
 }
 main .pages .todo-page .todo-container .tasks .task p {
   font-size: 1.1rem;
+}
+main .pages .dailyplanner-page {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+main .pages .dailyplanner-page .daily-container {
+  gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30px 5px;
+  justify-content: space-around;
+  border-radius: 10px;
+  margin-top: 20px;
+  min-width: 80%;
+  min-height: 90%;
+  background-color: var(--pri);
+}
+main .pages .dailyplanner-page .daily-container .planner-div {
+  min-width: 47%;
+  color: var(--quar);
+  position: relative;
+}
+main .pages .dailyplanner-page .daily-container .planner-div input {
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 5px;
+  background-color: var(--ter);
+  color: var(--quar);
+  padding: 25px 15px 15px 15px;
+  width: 100%;
+  outline: none;
+  border: none;
+}
+main .pages .dailyplanner-page .daily-container .planner-div span {
+  font-size: 1rem;
+  top: 1%;
+  position: absolute;
+  left: 1%;
 }/*# sourceMappingURL=style.css.map */

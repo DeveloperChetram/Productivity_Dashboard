@@ -21,6 +21,8 @@ const openFeatures = (() => {
 
 })()
 
+const todo = ()=>{
+
 let form = document.querySelector('.add-task form');
 let taskInput = document.querySelector('.add-task form input');
 let taskDescription = document.querySelector('.add-task form textarea');
@@ -29,9 +31,10 @@ let important = document.querySelector('#important');
 let tasks = document.querySelector('.tasks');
 let EmptyAlert = document.querySelector('.alert');
 // let clearBtn = document.querySelector('.clear-all-task-btn');
-
+// localStorage.clear()
 let alltask = []
-localStorage.getItem('alltasks') ? alltask=JSON.parse(localStorage.getItem('alltasks')) : console.log('task list is empty');
+let completedTask=[]
+localStorage.getItem('alltask') ? alltask=JSON.parse(localStorage.getItem('alltask')) : console.log('task list is empty');
 ;
 
 
@@ -57,9 +60,13 @@ function renderTask() {
     // Add event listeners for complete buttons
     btnn.forEach(btn => {
         btn.addEventListener('click', () => {
+            completedTask.push(alltask[btn.id])
+            alltask.splice(btn.id,1); 
+                localStorage.setItem('alltask', JSON.stringify(alltask));
+            renderTask();   
             
-            alltask.splice(btn.id,1)
-            renderTask()
+            console.log(completedTask)
+                    
         });
     });
 }
@@ -77,7 +84,7 @@ form.addEventListener('submit', (e) => {
     taskInput.value = ""
     taskDescription.value = ""
     important.checked = false
-    localStorage.setItem('alltasks',JSON.stringify(alltask)) 
+    localStorage.setItem('alltask',JSON.stringify(alltask)) 
     }
 
     else{
@@ -91,5 +98,35 @@ form.addEventListener('submit', (e) => {
 })
 
 
-
+}
+todo()
 // localStorage.clear()
+
+let hours = Array.from({length:18},(_,idx)=>{
+   
+})
+
+let dayPlanData= JSON.parse(localStorage.getItem('dayPlanData'))  ||{}
+
+let daySum=''
+
+
+hours.forEach((_,idx)=>{
+    daySum+= `      <div class="planner-div">
+                   
+                        <input type="text" id=${idx} value="${dayPlanData[idx] !==undefined ? dayPlanData[idx] : ''  }" placeholder="Enter your routine">
+                             <span>${6+idx}:00 - ${7+idx}:00</span>
+                    </div>`
+})
+// localStorage.clear()
+document.querySelector('.daily-container').innerHTML=daySum
+
+let allInputs=document.querySelectorAll('.planner-div input')
+allInputs.forEach((e)=>{
+    e.addEventListener('input',(e)=>{
+        // console.log(e.target.id)
+        dayPlanData[e.target.id]=e.target.value
+        localStorage.setItem('dayPlanData',JSON.stringify(dayPlanData))
+        console.log(dayPlanData)
+    })
+})
